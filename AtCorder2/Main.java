@@ -2,21 +2,19 @@ import java.util.*;
 import java.util.stream.*;
 
 //ABC
-//public class ABC   {
+
 public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     int n = scanner.nextInt();
     String s = scanner.next();
     char[] sArray = scanner.next().toCharArray();
-    
     scanner.close();
-    
     System.out.println();
   }
 }
 
-if () {
+if ( ) {
   System.out.println("Yes");
 } else {
   System.out.println("No");
