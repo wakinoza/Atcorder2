@@ -2,7 +2,6 @@ import java.util.*;
 import java.util.stream.*;
 
 //ABC
-
 public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -12,10 +11,4 @@ public class Main {
     scanner.close();
     System.out.println();
   }
-}
-
-if ( ) {
-  System.out.println("Yes");
-} else {
-  System.out.println("No");
 }
