@@ -37,7 +37,7 @@ public class Main {
         // st.nextToken() は、内部のポインタを次の空白まで進めて文字列を返す
         int a = Integer.parseInt(st.nextToken());
     }
-    scanner.close();
+    br.close();
     System.out.println();
   }
 }
