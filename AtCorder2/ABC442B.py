@@ -1,24 +1,32 @@
-# ABC
-# import sys
+import sys
+
 # sys.setrecursionlimit(10**7)
 # input = sys.stdin.readline
 
-q = int(input())
-volume = 0
-is_play = False
-for _ in range(0, q) :
-  a = int(input())
-  if a == 1:
-    volume += 1
-  if a == 2:
-    volume = max(volume - 1, 0)
-  if a == 3:
-    if is_play:
-      is_play = False
-    else:
-      is_play = True
-  if (volume >= 3 and is_play):
-    print("Yes")
-  else:
-    print("No")
+def solve():
+    input_data = sys.stdin.read().split()
+    Q = int(input_data[0])
+    queries = map(int, input_data[1:])
+    
+    volume = 0
+    is_play = False
+    results = []
+    
+    for a in queries:
+        if a == 1:
+            volume += 1
+        elif a == 2:
+            if volume > 0:
+                volume -= 1
+        else:
+            is_play = not is_play
+        
+        if volume >= 3 and is_play:
+            results.append("Yes")
+        else:
+            results.append("No")
+    
+    print('\n'.join(results))
 
+if __name__ == "__main__":
+    solve()
