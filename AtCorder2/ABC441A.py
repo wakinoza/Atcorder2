@@ -1,16 +1,11 @@
-import sys
 
-# sys.setrecursionlimit(10**7)
+p, q = map(int, input().split())
+x, y = map(int, input().split())
+if (p <= x and x <= p + 99 and q <= y and y <= q + 99):
+    print("Yes")
+else:
+    print("No")
 
-def solve():
-    input_data = sys.stdin.read().split()
-    n = int(input_data[0])
-    a_iterators = map(int, input_data[1:])
-
-    print()
-
-if __name__ == "__main__":
-    solve()
 
 
 
