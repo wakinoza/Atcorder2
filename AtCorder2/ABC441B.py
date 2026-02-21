@@ -29,6 +29,8 @@ print('\n'.join(results))
 # s2, s2, s3 = input().rstrip() #1行文字列を空白区切りで文字列に分割する
 # l = list(map(int, input().split()))
 
+
+
 # input_data = sys.stdin.read().split()
 # s = input_data[0]
 # n = int(input_data[0])
