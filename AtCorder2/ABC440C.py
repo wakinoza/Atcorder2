@@ -1,17 +1,34 @@
 import sys
 
-# sys.setrecursionlimit(10**7)
-
 def solve():
-    input_data = sys.stdin.read().split()
-    n = int(input_data[0])
-    a_iterators = map(int, input_data[1:])
+    # 入力を一気に読み込み、イテレータにする
+    input_data = map(int, sys.stdin.read().split())
+    T = next(input_data)
+    results = []
+    for _ in range(T):
+        N = next(input_data)
+        W = next(input_data)
+        C = [next(input_data) for _ in range(N)]
+        W2 = 2 * W
 
-    print()
+        surplus_costs = [0] * W2
+        for i, cost in enumerate(C, 1):
+            surplus_costs[i % W2] += cost
+
+        extended_costs = surplus_costs + surplus_costs
+
+        current_sum = sum(extended_costs[:W])
+        min_cost = current_sum
+        for i in range(W2):
+            current_sum = current_sum - extended_costs[i] + extended_costs[i + W]
+            if current_sum < min_cost:
+                min_cost = current_sum
+        results.append(str(min_cost))
+
+    sys.stdout.write("\n".join(results) + "\n")
 
 if __name__ == "__main__":
     solve()
-
 
 # s = input()
 # n = int(input())
