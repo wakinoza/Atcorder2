@@ -3,6 +3,7 @@ import sys
 # sys.setrecursionlimit(10**7)
 
 def solve():
+    n = int(input())
     input_data = sys.stdin.read().split()
     n = int(input_data[0])
     a_iterators = map(int, input_data[1:])
