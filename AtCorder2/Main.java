@@ -24,18 +24,27 @@ public class Main {
     // 1. 入力準備（標準入力をバッファリングして読み込む）
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-    // 最初の1行（N）を読み込む
-    String firstLine = br.readLine();
-    int n = Integer.parseInt(firstLine.trim());
+    //1行に数値が一つの時
+    int n = Integer.parseInt(br.readLine().trim());
 
-    // 2. 数値列（A1 A2 ... AN）の読み込み準備
+    // 数値列（A1 A2 ... AN）の読み込み
     // StringTokenizerは、読み込んだ1行の文字列を「空白」などで切り分ける役割
     StringTokenizer st = new StringTokenizer(br.readLine());
 
-    // 3. ループ内で1つずつトークン（単語）を取り出す
     for (int i = 0; i < n; i++) {
         // st.nextToken() は、内部のポインタを次の空白まで進めて文字列を返す
         int a = Integer.parseInt(st.nextToken());
+    }
+
+    // 1行に文字列が一つの時
+    String s = br.readLine().trim();
+
+    // 文字列の列（A1 A2 ... AN）の読み込み
+    // StringTokenizerは、読み込んだ1行の文字列を「空白」などで切り分ける役割
+    StringTokenizer st = new StringTokenizer(br.readLine());
+
+    for (int i = 0; i < n; i++) {
+      String s = st.nextToken();
     }
     br.close();
     System.out.println();
