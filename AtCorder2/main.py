@@ -3,7 +3,7 @@ import sys
 # sys.setrecursionlimit(10**7)
 
 def solve():
-    input_iter = iter(sys.stdin.read().split())
+
 
     print()
 
