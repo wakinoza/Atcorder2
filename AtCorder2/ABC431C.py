@@ -1,12 +1,23 @@
-# ABC
+# ABC431C
 import sys
 
 # sys.setrecursionlimit(10**7)
 
 def solve():
-
-
-    print()
+    it = iter(map(int,sys.stdin.read().split()))
+    N, M, K = next(it), next(it), next(it)
+    H = sorted([next(it) for _ in range(N)])
+    B = sorted([next(it) for _ in range(M)])
+    robot_count = 0
+    h_index = 0
+    for b in B:
+        if H[h_index] <= b :
+            robot_count += 1
+            h_index += 1
+        if robot_count >= K :
+            break
+    answer = "Yes" if robot_count >= K else "No"
+    print(answer)
 
 if __name__ == "__main__":
     solve()
