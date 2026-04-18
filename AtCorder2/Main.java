@@ -23,12 +23,14 @@ public class Main {
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     StringTokenizer firstLine = new StringTokenizer(br.readLine());
-    int b = Integer.parseInt(firstLine.nextToken());
+    final int N = Integer.parseInt(firstLine.nextToken());
+    final int M = Integer.parseInt(firstLine.nextToken());
+
     int n = Integer.parseInt(br.readLine().trim());
 
     StringTokenizer st = new StringTokenizer(br.readLine());
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < N; i++) {
       int a = Integer.parseInt(st.nextToken());
     }
 
