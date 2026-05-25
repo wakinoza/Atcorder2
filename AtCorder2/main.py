@@ -1,4 +1,4 @@
-# ABC
+# 鉄則問題集AB（）
 import sys
 
 # sys.setrecursionlimit(10**7)
