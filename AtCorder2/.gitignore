@@ -38,3 +38,7 @@ target/
 .settings
 .springBeans
 .sts4-cache
+
+main.py
+main.java
+
