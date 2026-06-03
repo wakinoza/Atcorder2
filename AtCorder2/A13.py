@@ -5,10 +5,11 @@ from bisect import bisect_right
 def solve():
     n, k, *a = map(int, sys.stdin.read().split())
     answer = 0
-    for i in range(n - 1):
-        target = a[i] + k
-        right_index = bisect_right(a, target, lo=i + 1)
-        answer += right_index - (i + 1)
+    right = 0
+    for left in range(n):
+        while right < n and a[right] - a[left] <= k:
+            right += 1
+        answer += right - 1 - left
     print(answer)
 
 if __name__ == "__main__":
