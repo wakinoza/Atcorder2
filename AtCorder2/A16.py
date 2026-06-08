@@ -4,12 +4,13 @@ import sys
 def solve():
     n, *other = map(int, sys.stdin.read().split())
     a, b = other[:n - 1], other[n - 1:]
-    a = [0, 0] + a
-    b = [0, 0, 0] + b
-    dp = [0, 0, a[2]]
-    for x in range(3, n + 1):
-        dp.append(min(dp[x - 2] + b[x], dp[x - 1] + a[x]))
-    print(dp[x])
+    dp = [0] * n
+    dp[1] = a[0]
+    
+    for i in range(2, n):
+        dp[i] = min(dp[i - 1] + a[i - 1], dp[i - 2] + b[i - 2])
+        
+    print(dp[-1])
 
 if __name__ == "__main__":
     solve()
