@@ -4,17 +4,16 @@ from bisect import bisect_left, bisect_right
 
 def solve():
     n, *a = map(int, sys.stdin.read().split())
-    l = [10**18] * n
-    len = 0
-    for i in range(n):
-      pos = bisect_left(l,a[i]);
-      if pos < 0:
-        pos *= -1 
-      l[pos] = a[i]
-      if pos == len:
-        len += 1
+    L = []
+    for x in a:
+      pos = bisect_left(L,x);
 
-    print(len)
+      if pos == len(L):
+        L.append(x)
+      else :
+        L[pos] = x
+
+    print(len(L))
 
 if __name__ == "__main__":
     solve()
