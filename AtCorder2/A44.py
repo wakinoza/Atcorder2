@@ -2,27 +2,23 @@
 import sys
 
 def solve():
-    input_data = iter(map(int,sys.stdin.read().split()))
-    n, q = next(input_data), next(input_data),
+    input_data = map(int,sys.stdin.read().split())
+    n, q = next(input_data), next(input_data)
     answer = []
-    array =  [0] + [x for x in range(1,n + 1)]
-    is_reverse = False
+    array =  [x for x in range(n + 1)]
+    is_reversed = False
     for _ in range(q):
-        q = next(input_data)
-        if q == 1:
+        query_type = next(input_data)
+        if query_type == 1:
             x, y = next(input_data),next(input_data)
-            if is_reverse :
-                array[n - x + 1] = y
-            else :
-                array[x] = y
-        elif q == 2 :
-            is_reverse = not is_reverse
+            idx = (n - x + 1) if is_reversed else x
+            array[idx] = y
+        elif query_type == 2:
+            is_reversed = not is_reversed
         else :
             x = next(input_data)
-            if is_reverse :
-                answer.append(array[n - x + 1])
-            else :
-                answer.append(array[x])
+            idx = (n - x + 1) if is_reversed else x
+            answer.append(array[idx])
     print("\n".join(map(str, answer)))
 
 if __name__ == "__main__":
